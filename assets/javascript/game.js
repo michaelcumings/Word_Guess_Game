@@ -1,5 +1,5 @@
 
-    var wordlist=["WOTAN", "SIEGFRIED", "NOTUNG", "BRUNNHILDE", "HAGEN", "ASGARD", "NIBELHEIM", "VALHALLA"];
+    var wordlist=["WOTAN", "SIEGFRIED", "NOTUNG", "BRUNNHILDE", "HAGEN", "REISENHEIM", "FRICKA", "DONNER", "FAFNER", "FASOLT", "ALBERICH", "NIBELHEIM", "VALHALLA"];
 
 // pick a random word from the word list
 // var wordchoice = wordlist[Math.floor(Math.random() * wordlist.length)];
@@ -60,8 +60,11 @@ function newgame() {
         // Add to "already guessed list" and the rest of the stuff if not already guessed
         if (!already.includes(userGuess)) {
             $("#sofar").empty();
-            already += userGuess;
-            sofar.append("You have already guessed: " + already);
+                if (userGuess.length < 2) {
+                    already += userGuess;
+                    sofar.append("You have already guessed: " + already);
+                } else sofar.append("You have already guessed: " + already);
+            
 
 
         // if the player keystroke is not in the word, decrement the counter
@@ -87,6 +90,8 @@ function newgame() {
         if (guesses < 1) {
             // var guesses = 5;
             $("#results").empty();
+            var audio = $("#defeat")[0];
+                audio.play();
             results.append("<p>O Schmerz&#33;</p> \
                 <br> \
                 You Lost&#33; \
@@ -102,6 +107,8 @@ function newgame() {
         if (gameword === wordchoice) {
             console.log("You Win!!");
             $("#results").empty();
+            var audio = $("#victory")[0];
+                audio.play();
             results.append("<p>Hojotoho&#33;</p> \
                 <br> \
                 You Won&#33; \
@@ -113,13 +120,9 @@ function newgame() {
             newgame();
         };
     };
-        // console.log(gameword);
-        // console.log(guesses);    
+
         };
 
- 
-
-    console.log(gameword);
     console.log(wordchoice);
 };
 

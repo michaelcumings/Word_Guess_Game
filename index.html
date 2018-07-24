@@ -3,19 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Der Hangman-Game des Nibelungen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC|UnifrakturMaguntia" rel="stylesheet">
+    <audio id="victory" preload="auto">
+            <source src="./assets/images/d22.mp3"> </source>
+    </audio>
+    <audio id="defeat" preload="auto">
+            <source src="./assets/images/d76.mp3"> </source>
+    </audio>
 </head>
 <body>
     <div id="titlebar">Der Hangman-Game des Nibelungen</div>
-    <div id="results"></div>    
+    <div id="results"><br></div>    
     <div id="gamediv">
             <div id="description">
             Guess What Letter I'm thinking of!
             <br>
-            Hint: clues are drawn from Wagner's Ring Cycle
+            Hint: clues are drawn from Wagner's Ring Cycle<br>
+            If you don't know the Ring Cycle, cheat using the console.
             </div>
             <div id="activeword"></div>
             <div id="sofar"></div>
