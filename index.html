@@ -9,9 +9,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-        <div id="gamediv">
+    <div id="titlebar">Der Hangman-Game des Nibelungen</div>
+    <div id="results"></div>    
+    <div id="gamediv">
+            <div id="description">
+            Guess What Letter I'm thinking of!
+            <br>
+            Hint: clues are drawn from Wagner's Ring Cycle
+            </div>
             <div id="activeword"></div>
-        </div>
+            <div id="sofar"></div>
+            <div id="remaining">15 guesses remaining!</div>
+            <div id="winsdiv">Wins: 0</div>
+            <div id="lossesdiv">Losses: 0</div>
+    </div>
+        
         <script src="assets/javascript/game.js"></script>
 </body>
 </html>
